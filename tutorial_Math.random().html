@@ -13,7 +13,7 @@
 <div id='display_sampling'></div>
 
 <script>
-const	sample_num = 4242;
+const	sample_num = 424022;
 let		sample_data = []
 let		i = 0;
 
@@ -26,6 +26,10 @@ while (i < sample_num)
 const display_sampling = [{
 	x: sample_data,
 	type: 'histogram',
+	xbins: {
+		end: 1,
+		start: 0
+	}
 }];
 
 Plotly.newPlot('display_sampling', display_sampling);
