@@ -1,0 +1,33 @@
+<head>
+	<meta charset="utf-8">
+	<script src='https://cdn.plot.ly/plotly-2.14.0.min.js'></script>
+</head>
+<h1>
+	Math.random 소개
+</h1>
+
+<p>
+	Math.random는 0포함 1미만 사이 값의 난수를 <strong>균일</strong>하게 반환!
+</p>
+
+<div id='display_sampling'></div>
+
+<script>
+const	sample_num = 4242;
+let		sample_data = []
+let		i = 0;
+
+while (i < sample_num)
+{
+	sample_data.push(Math.random());
+	i++;
+}
+
+const display_sampling = [{
+	x: sample_data,
+	type: 'histogram',
+}];
+
+Plotly.newPlot('display_sampling', display_sampling);
+
+</script>
