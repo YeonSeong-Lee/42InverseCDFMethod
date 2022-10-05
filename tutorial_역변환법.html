@@ -24,15 +24,19 @@
 	
 	while (i < sample_num)
 	{
+		const lamda = 3;
 		const uniform_data = Math.random();
-		const transed_data = -1 * Math.log(1 - uniform_data);
+		const transed_data = -lamda * Math.log(uniform_data); // 1 - uniform_data = uniform_data
 		sample_data.push(transed_data);
 		i++;
 	}
 	
 	const display_sampling = [{
 		x: sample_data,
-		type: 'histogram'
+		type: 'histogram',
+		xbins: {
+		start: 0
+	}
 	}];
 	
 	Plotly.newPlot('display_sampling', display_sampling);
