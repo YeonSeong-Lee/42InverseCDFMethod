@@ -4,17 +4,6 @@
 </head>
 <h1>역변환법</h1>
 
-<h2>누적분포 함수</h2>
- <p>Q. 일어날 수 있는 모든 경우의 확률을 모두 더한 값은?
-	=== 일어날 수 있는 확률을 모두 고려했을 때, 그중 하나라도 해당할 확률은?
- </p>
-
- <p>
-	Q. 일어날 수 있는 확률을 모두 고려했을 때, 그중 하나라도 해당하지 않을 확률은?
- </p>
-
-<h2>역변환법 유도</h2>
-
 <div id="display_sampling"></div>
 
 <script>
@@ -24,7 +13,7 @@
 	
 	while (i < sample_num)
 	{
-		const lamda = 3;
+		const lamda = 1.5;
 		const uniform_data = Math.random();
 		const transed_data = -lamda * Math.log(uniform_data); // 1 - uniform_data = uniform_data
 		sample_data.push(transed_data);
@@ -35,7 +24,6 @@
 		x: sample_data,
 		type: 'histogram',
 		xbins: {
-		start: 0
 	}
 	}];
 	
